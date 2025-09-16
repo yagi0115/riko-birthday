@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAPPY Birthday りこ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #a3363a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: "Hiragino Mincho ProN", serif;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #main {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="cover">
+    <img src="cover.gif" alt="表紙画像" id="coverImg" />
+  </div>
+
+  <div id="main">
+    <img src="message.gif" alt="メッセージ画像" />
+    <audio id="bgm" autoplay loop>
+      <source src="happy-birthday-334876.mp3" type="audio/mpeg" />
+      お使いのブラウザは音声再生に対応していません。
+    </audio>
+  </div>
+
+  <script>
+    const cover = document.getElementById("cover");
+    const main = document.getElementById("main");
+    const bgm = document.getElementById("bgm");
+
+    document.getElementById("coverImg").addEventListener("click", () => {
+      cover.style.display = "none";
+      main.style.display = "flex";
+      bgm.play();
+    });
+  </script>
+</body>
+</html>
